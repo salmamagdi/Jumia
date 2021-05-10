@@ -1,10 +1,33 @@
 # Country Phone App Code 
 It is a single page application in Java that shows a customers list categorized by country and phone state (valid or not valid).
-## Run 
+* [Build Spring Boot App ](https://github.com/salmamagdi/Jumia/tree/main)
+* [Build  Angular 8 App with Bootstrap](https://github.com/salmamagdi/Jumia/tree/main-ui)
+
+**Prerequisites:** 
+* [Node 10](https://nodejs.org/)+
+* [Java 8](https://adoptopenjdk.net/)+
+
+## Getting Started
+
+To install this example application, run the following commands:
+
+```bash
+git clone https://github.com/salmamagdi/Jumia.git
+```
+
+This will get a copy of the project installed locally. To install all of its dependencies and start each app, follow the instructions below.
+### Spring Boot Configuration
 ```
 mvn spring-boot:run
 ```
-The home page can be access in http://localhost:8085.
+
+### Angular Configuration
+
+```bash
+npm install && npm start
+```
+Open your browser to http://localhost:4200/countryPhone, log to the App.
+
 
 ## Swagger Url 
 http://localhost:8085/swagger-ui.html#/redirect-controller/expiredTokenUsingGET
