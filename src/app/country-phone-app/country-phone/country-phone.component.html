@@ -1,0 +1,56 @@
+<div class="container">
+    <form   class="form form-login" role="form">
+      <div class="form-group">
+        <div  >
+        Country:
+        <select class="form-control jupSelect" #selectedCuntory >
+            <option  [value]=""></option>
+            <option *ngFor="let country of countryNames" [value]="country">{{country}}</option>
+        </select>
+      </div>
+      <div>
+        Phone Status:
+        <select class="form-control jupSelect" #selectedStatus >
+          <option  [value]=""></option>
+          <option *ngFor="let st of status" [value]="st">{{st}}</option>
+      </select>
+
+      </div>
+          <button type='button' (click)="getValueFromSelect(selectedCuntory.value,selectedStatus.value)">Filter Data</button>
+
+    </div>
+    </form>
+
+    <!--Table-->
+<table class="table table-condensed table-hover table-curved">
+  <!--Table head-->
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Country</th>
+          <th>Status</th>
+      </tr>
+  </thead>
+  <!--Table head-->
+  <!--Table body-->
+  <tbody>
+    
+      <tr  *ngFor="let customer of customerPhones">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.phone}}</td>
+          <td>{{customer.country}}</td>
+          <td>{{customer.phoneStatus}}</td>
+      </tr>
+
+      <tr *ngIf="customerPhones?.length == 0">
+        <td  colspan="3">No  matching results</td>
+    </tr>
+  </tbody>
+  <!--Table body-->
+</table>
+<!--Table-->
+<!-- <ngb-pagination [collectionSize]="customerPhones.length" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination> -->
+  </div>
