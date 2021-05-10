@@ -1,0 +1,21 @@
+version: "3.0"
+
+services:
+  phoneCheckerApi:
+    container_name: phoneCheckerApi
+    build:
+      context: ./countryphoneapp/
+      dockerfile: Dockerfile
+    ports:
+      - "8085:8085"
+    restart: always
+  phoneCheckerUi:
+    container_name: phoneCheckerUi
+    build: 
+    dockerfile: Dockerfile
+    links:
+      - "phoneCheckerApi"
+    depends_on:
+      - "phoneCheckerApi"
+    ports:
+      - "4200:4200"
